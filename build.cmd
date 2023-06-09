@@ -1,4 +1,5 @@
 @echo off
+
 pushd Client
 dotnet publish -c Release
 popd
