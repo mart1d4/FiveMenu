@@ -1,0 +1,27 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiveMenu.Client", "Client\FiveMenu.Client.csproj", "{80A0EC59-7763-48E0-8981-1F2FD26837F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiveMenu.Server", "Server\FiveMenu.Server.csproj", "{120CE511-307B-4445-A096-3D229C9403C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80A0EC59-7763-48E0-8981-1F2FD26837F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A0EC59-7763-48E0-8981-1F2FD26837F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A0EC59-7763-48E0-8981-1F2FD26837F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A0EC59-7763-48E0-8981-1F2FD26837F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{120CE511-307B-4445-A096-3D229C9403C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{120CE511-307B-4445-A096-3D229C9403C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{120CE511-307B-4445-A096-3D229C9403C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{120CE511-307B-4445-A096-3D229C9403C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

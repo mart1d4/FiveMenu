@@ -1,0 +1,10 @@
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\bin\Release\netstandard2.0\FiveMenu.Server.deps.json
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\bin\Release\netstandard2.0\FiveMenu.Server.net.dll
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\bin\Release\netstandard2.0\FiveMenu.Server.net.pdb
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\obj\Release\netstandard2.0\FiveMenu.Server.csproj.AssemblyReference.cache
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\obj\Release\netstandard2.0\FiveMenu.Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\obj\Release\netstandard2.0\FiveMenu.Server.AssemblyInfoInputs.cache
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\obj\Release\netstandard2.0\FiveMenu.Server.AssemblyInfo.cs
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\obj\Release\netstandard2.0\FiveMenu.Server.csproj.CoreCompileInputs.cache
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\obj\Release\netstandard2.0\FiveMenu.Server.net.dll
+C:\Users\mart1d4\CSharpResources\FiveMenu\Server\obj\Release\netstandard2.0\FiveMenu.Server.net.pdb
