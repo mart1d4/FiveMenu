@@ -7,9 +7,8 @@ The menu is designed for use within the FiveM multiplayer modification for Grand
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Contributing](#contributing)
-6. [License](#license)
+4. [Contributing](#contributing)
+5. [License](#license)
 
 ## Introduction
 
@@ -18,10 +17,13 @@ It provides a convenient way for players to interact with the game and access ad
 
 ## Features
 
-- **Feature 1:** Describe the first feature of your menu.
-- **Feature 2:** Describe the second feature of your menu.
-- **Feature 3:** Describe the third feature of your menu.
-- ...
+- **Vehicle Spawning:** Spawn a wide variety of vehicles instantly (including modded vehicles).
+- **Vehicle Modification:** Customize and modify spawned vehicles with various options, such as color, upgrades, and tuning.
+- **Player Modification:** Access player customization options, such as changing appearance, outfit, and accessories.
+- **Teleportation:** Instantly teleport the player to different locations within the game world.
+- **Weather Control:** Change the in-game weather conditions to enhance the atmosphere or create specific scenarios.
+- **Weapon Access:** Quickly obtain weapons and ammunition to equip the player for various situations.
+- **And More:** The menu may also offer additional features like player health modification, invincibility, and more.
 
 ## Installation
 
@@ -34,15 +36,6 @@ To install FiveMenu, please follow these steps:
 5. Save the configuration file and start/restart your FiveM server.
 
 Once the server is running, FiveMenu should be accessible in-game (the default keybinding is `M`).
-
-## Usage
-
-To use the FiveM Menu, perform the following steps:
-
-1. Step 1 of usage.
-2. Step 2 of usage.
-3. Step 3 of usage.
-4. ...
 
 ## Contributing
 
