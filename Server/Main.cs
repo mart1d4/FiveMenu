@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using CitizenFX.Core;
 
 namespace FiveMenu.Server
@@ -8,7 +6,7 @@ namespace FiveMenu.Server
     {
         public Main()
         {
-            Debug.WriteLine("Initialised FiveMenu server.");
+            Debug.WriteLine("[^2INFO^7] Successfuly initialized FiveMenu Server");
         }
     }
 }

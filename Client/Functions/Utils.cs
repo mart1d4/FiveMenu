@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using static CitizenFX.Core.Native.API;
 
-namespace FiveMenu.Client
+namespace FiveMenu.Client.Functions
 {
-    internal class Functions : BaseScript
+    internal class Utils : BaseScript
     {
         public static async void SpawnVehicle(string model, bool enterVehicle)
         {
@@ -15,7 +15,7 @@ namespace FiveMenu.Client
                 TriggerEvent("chat:addmessage", new
                 {
                     color = new[] { 255, 0, 0 },
-                    args = new[] { "[menu]", $"you tried to spawn an unknown vehicle ^*({model})." }
+                    args = new[] { "[FiveMenu]", $"You tried to spawn an unknown vehicle ^*({model})." }
                 });
                 return;
             }
@@ -63,26 +63,23 @@ namespace FiveMenu.Client
                     return Game.PlayerPed.CurrentVehicle;
                 }
             }
+
             return null;
         }
 
-        public static async Task TeleportToCoords(Vector3 pos, bool safeModeDisabled = false)
+        public static async Task TeleportToCoords(Vector3 pos)
         {
-            if (safeModeDisabled)
-            {
-                return;
-            }
-
             Vehicle veh = GetVehicle();
-            bool inVehicle()
+
+            bool InVehicle()
             {
                 return veh != null && veh.Exists() && Game.PlayerPed == veh.Driver;
             }
 
-            bool vehicleRestoreVisibility = inVehicle() && veh.IsVisible;
+            bool vehicleRestoreVisibility = InVehicle() && veh.IsVisible;
             bool pedRestoreVisibility = Game.PlayerPed.IsVisible;
 
-            if (inVehicle())
+            if (InVehicle())
             {
                 veh.IsPositionFrozen = true;
                 if (veh.IsVisible)
@@ -137,7 +134,7 @@ namespace FiveMenu.Client
                     await Delay(0);
                 }
 
-                if (inVehicle())
+                if (InVehicle())
                 {
                     SetEntityCoords(veh.Handle, pos.X, pos.Y, z, false, false, false, true);
                 }
@@ -154,6 +151,7 @@ namespace FiveMenu.Client
                     {
                         break;
                     }
+
                     await Delay(0);
                 }
 
@@ -161,7 +159,7 @@ namespace FiveMenu.Client
 
                 if (found)
                 {
-                    if (inVehicle())
+                    if (InVehicle())
                     {
                         SetEntityCoords(veh.Handle, pos.X, pos.Y, groundZ, false, false, false, true);
 
@@ -173,6 +171,7 @@ namespace FiveMenu.Client
                     {
                         SetEntityCoords(Game.PlayerPed.Handle, pos.X, pos.Y, groundZ, false, false, false, true);
                     }
+
                     break;
                 }
 
@@ -184,7 +183,7 @@ namespace FiveMenu.Client
                 Vector3 safePos = pos;
                 GetNthClosestVehicleNode(pos.X, pos.Y, pos.Z, 0, ref safePos, 0, 0, 0);
 
-                if (inVehicle())
+                if (InVehicle())
                 {
                     SetEntityCoords(veh.Handle, safePos.X, safePos.Y, safePos.Z, false, false, false, true);
                     veh.IsPositionFrozen = false;
@@ -197,7 +196,7 @@ namespace FiveMenu.Client
                 }
             }
 
-            if (inVehicle())
+            if (InVehicle())
             {
                 if (vehicleRestoreVisibility)
                 {
@@ -207,6 +206,7 @@ namespace FiveMenu.Client
                         Game.PlayerPed.IsVisible = false;
                     }
                 }
+
                 veh.IsPositionFrozen = false;
             }
             else
@@ -215,6 +215,7 @@ namespace FiveMenu.Client
                 {
                     NetworkFadeInEntity(Game.PlayerPed.Handle, true);
                 }
+
                 Game.PlayerPed.IsPositionFrozen = false;
             }
 

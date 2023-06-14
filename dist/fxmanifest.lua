@@ -1,11 +1,11 @@
-fx_version 'bodacious'
+fx_version 'cerulean'
 game 'gta5'
 
-file 'Client/bin/Release/**/publish/*.dll'
+author 'mart1d4'
+version '0.1.0'
+description 'A FiveM Menu to do different things'
 
-client_script 'Client/bin/Release/**/publish/*.net.dll'
-server_script 'Server/bin/Release/**/publish/*.net.dll'
+file 'Client/*.dll'
 
-author 'You'
-version '1.0.0'
-description 'Example Resource from C# Template'
+client_script 'Client/*.dll'
+server_script 'Server/*.dll'
