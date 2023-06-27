@@ -1,3 +1,0 @@
-C:\Users\mart1d4\CSharpResources\FiveMenu\Client\bin\Release\net452\publish\FiveMenu.Client.net.dll
-C:\Users\mart1d4\CSharpResources\FiveMenu\Client\bin\Release\net452\publish\CitizenFX.Core.Client.dll
-C:\Users\mart1d4\CSharpResources\FiveMenu\Client\bin\Release\net452\publish\LemonUI.FiveM.dll

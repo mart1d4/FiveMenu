@@ -2,3 +2,9 @@
 .idea
 .vs
 dist
+
+Client/bin
+Client/obj
+
+Server/bin
+Server/obj

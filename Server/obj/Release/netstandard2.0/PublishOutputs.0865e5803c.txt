@@ -1,4 +1,0 @@
-C:\Users\mart1d4\CSharpResources\FiveMenu\Server\bin\Release\netstandard2.0\publish\FiveMenu.Server.net.dll
-C:\Users\mart1d4\CSharpResources\FiveMenu\Server\bin\Release\netstandard2.0\publish\FiveMenu.Server.deps.json
-C:\Users\mart1d4\CSharpResources\FiveMenu\Server\bin\Release\netstandard2.0\publish\FiveMenu.Server.net.pdb
-C:\Users\mart1d4\CSharpResources\FiveMenu\Server\bin\Release\netstandard2.0\publish\CitizenFX.Core.Server.dll
