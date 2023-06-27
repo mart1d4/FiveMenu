@@ -9,10 +9,11 @@
 
     <ItemGroup>
         <PackageReference Include="CitizenFX.Core.Server" Version="1.0.*" />
+        <Compile Include="../Shared/**/*.cs" />
     </ItemGroup>
 
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="call &quot;$(SolutionDir)deploy.bat&quot; &quot;$(SolutionDir)&quot;" />
-    </Target>
+    <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">-->
+    <!--    <Exec Command="call &quot;C:\Users\mart1d4\CSharpResources\FiveMenu\deploy.bat&quot; &quot;C:\Users\mart1d4\CSharpResources\FiveMenu\deploy.bat&quot;" />-->
+    <!--</Target>-->
 </Project>
 

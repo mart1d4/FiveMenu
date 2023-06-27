@@ -1,14 +1,20 @@
 @echo off
 
-rmdir /s /q %1dist
-mkdir %1dist
+pushd Client
+dotnet publish -c Release
+popd
 
-copy /y %1fxmanifest.lua %1dist
-xcopy /y /e %1Client\bin\Release\net452\publish %1dist\Client\
-xcopy /y /e %1Server\bin\Release\netstandard2.0\publish %1dist\Server\
+pushd Server
+dotnet publish -c Release
+popd
+
+rmdir /s /q dist
+mkdir dist
+
+copy /y fxmanifest.lua dist
+xcopy /y /e Client\bin\Release\net452\publish dist\Client\bin\Release\net452\publish\
+xcopy /y /e Server\bin\Release\netstandard2.0\publish dist\Server\bin\Release\netstandard2.0\publish\
 
 rmdir /s /q "C:\FXServer\server-data\resources\FiveMenu"
 mkdir "C:\FXServer\server-data\resources\FiveMenu"
-xcopy /y /e %1dist "C:\FXServer\server-data\resources\FiveMenu"
-
-If errorlevel 1 @exit 0
+xcopy /y /e dist "C:\FXServer\server-data\resources\FiveMenu"

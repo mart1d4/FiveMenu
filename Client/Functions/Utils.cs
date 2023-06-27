@@ -6,17 +6,53 @@ namespace FiveMenu.Client.Functions
 {
     internal class Utils : BaseScript
     {
-        public static async void SpawnVehicle(string model, bool enterVehicle)
+        public static string BeautyString(string name)
+        {
+            name = name.ToLower();
+            name = name.Replace("_", " ");
+
+            string[] words = name.Split(' ');
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i].Length > 1)
+                {
+                    words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
+                }
+            }
+
+            return string.Join(" ", words);
+        }
+
+        public static void GiveWeapon(string model)
+        {
+            uint hash = (uint)GetHashKey(model);
+
+            if (!IsWeaponValid(hash))
+            {
+                return;
+            }
+
+            GiveWeaponToPed(GetPlayerPed(-1), hash, 120, false, false);
+        }
+
+        public static void RemoveWeapon(string model)
+        {
+            uint hash = (uint)GetHashKey(model);
+
+            if (!IsWeaponValid(hash))
+            {
+                return;
+            }
+
+            RemoveWeaponFromPed(GetPlayerPed(-1), hash);
+        }
+
+        public static async void SpawnVehicle(string model, bool enter, bool invincible)
         {
             uint hash = (uint)GetHashKey(model);
 
             if (!IsModelInCdimage(hash) || !IsModelAVehicle(hash))
             {
-                TriggerEvent("chat:addmessage", new
-                {
-                    color = new[] { 255, 0, 0 },
-                    args = new[] { "[FiveMenu]", $"You tried to spawn an unknown vehicle ^*({model})." }
-                });
                 return;
             }
 
@@ -35,9 +71,13 @@ namespace FiveMenu.Client.Functions
             SetVehicleCustomPrimaryColour(newVehicle.Handle, 0, 0, 0);
             SetVehicleCustomSecondaryColour(newVehicle.Handle, 0, 0, 0);
 
-            if (enterVehicle)
+            if (enter)
             {
                 Game.PlayerPed.SetIntoVehicle(newVehicle, VehicleSeat.Driver);
+            }
+
+            if (invincible)
+            {
             }
         }
 

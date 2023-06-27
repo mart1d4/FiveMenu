@@ -10,9 +10,9 @@ namespace FiveMenu.Client
     public class Main : BaseScript
     {
         private readonly ObjectPool _pool = new ObjectPool();
-        private readonly NativeMenu _menu = new NativeMenu("West Coast Menu", "Main menu | mart1d4");
+        private readonly NativeMenu _menu = new NativeMenu("West Coast Menu");
 
-        private readonly Dictionary<object, object> _subMenus = new Dictionary<object, object>();
+        private readonly Dictionary<NativeMenu, object> _subMenus = new Dictionary<NativeMenu, object>();
 
         // Main Submenus
         private readonly NativeMenu _onlineOptions = new NativeMenu(
@@ -47,46 +47,38 @@ namespace FiveMenu.Client
         public Main()
         {
             string playerName = GetPlayerName(-1);
-            _menu.Description = playerName;
+            _menu.Subtitle = $"Main menu | {playerName}";
 
-            _subMenus[_onlineOptions] = Categories.Online.OnlineCategories;
-            _subMenus[_playerOptions] = Categories.Player.PlayerCategories;
-            _subMenus[_vehicleOptions] = Categories.Vehicles.VehicleCategories;
+            _subMenus[_onlineOptions] = Categories.Online.InitiateCategory(_pool);
+            _subMenus[_playerOptions] = Categories.Player.InitiateCategory(_pool);
+            _subMenus[_vehicleOptions] = Categories.Vehicles.InitiateCategory(_pool);
             _subMenus[_miscOptions] = Categories.Misc.MiscCategories;
 
             // Add submenus to main menu
             foreach (var subMenu in _subMenus)
             {
-                foreach (var item in subMenu.Value as Dictionary<object, object>)
+                foreach (var item in subMenu.Value as NativeMenu[])
                 {
-                    if (item.Key.GetType() == typeof(NativeMenu))
-                    {
-                        Debug.WriteLine($"Key: {item.Key} | Value: {item.Value}");
-                        NativeMenu menu = subMenu.Key as NativeMenu;
-                        menu.Add(item.Key as NativeMenu);
-                        _pool.Add(item.Key as NativeMenu);
-                    }
+                    subMenu.Key.AddSubMenu(item);
+                    _pool.Add(item);
                 }
 
-                _menu.AddSubMenu(subMenu.Key as NativeMenu);
-                _pool.Add(subMenu.Key as NativeMenu);
+                _menu.AddSubMenu(subMenu.Key);
+                _pool.Add(subMenu.Key);
             }
 
             // Add main menu to the pool
             _pool.Add(_menu);
 
             // Run ticks
-            Tick += OnTick;
-//            Tick += FastTick;
-//            Tick += LongTick;
+            Tick += FastTick;
+            Tick += NormalTick;
+            Tick += LongTick;
         }
 
-        [Tick]
-        private Task OnTick()
+        private Task FastTick()
         {
             _pool.Process();
-
-            Debug.WriteLine("dklnweijkhbnfuojwehbn");
 
             if (Game.IsControlJustPressed(0, Control.VehicleDuck))
             {
@@ -108,16 +100,14 @@ namespace FiveMenu.Client
             return Task.FromResult(0);
         }
 
-//        [Tick]
-//        private async Task FastTick()
-//        {
-//            await Delay(500);
-//        }
-//
-//        [Tick]
-//        private async Task LongTick()
-//        {
-//            await Delay(5000);
-//        }
+        private async Task NormalTick()
+        {
+            await Delay(500);
+        }
+
+        private async Task LongTick()
+        {
+            await Delay(5000);
+        }
     }
 }

@@ -49,7 +49,14 @@ namespace FiveMenu.Client.Data
                     ["M6 F13"] = "m6f13",
                     ["M5 Competition"] = "2019M5",
                     ["X5 E53"] = "x5e53",
-                    ["M4 Competition"] = "m422"
+                    ["M4 Competition"] = "m422",
+                    ["E92"] = "e92",
+                    ["Z4"] = "z419",
+                    ["M3 E46"] = "m3e46",
+                    ["530D E39"] = "bmwe39",
+                    ["M5 E39"] = "mteche39",
+                    ["850 CSI"] = "850csi",
+                    ["M1"] = "m1"
                 },
                 ["Audi"] = new Dictionary<string, string>()
                 {
@@ -76,7 +83,8 @@ namespace FiveMenu.Client.Data
                     ["599 GTO"] = "599gto",
                     ["La Ferrari"] = "laferrari",
                     ["F8 Spider Tributo"] = "f8t",
-                    ["Portofino"] = "fpino"
+                    ["Portofino"] = "fpino",
+                    ["F 812"] = "f812"
                 },
                 ["Lamborghini"] = new Dictionary<string, string>()
                 {
@@ -84,6 +92,12 @@ namespace FiveMenu.Client.Data
                     ["Urus"] = "urus2018",
                     ["Aventador"] = "aventador",
                     ["LP 670 SV"] = "lp670sv"
+                },
+                ["Aston Martin"] = new Dictionary<string, string>()
+                {
+                    ["Vanquish"] = "ast",
+                    ["Vantage"] = "vantage",
+                    ["DBS Superleggera"] = "superleggera"
                 },
                 ["Bentley"] = new Dictionary<string, string>()
                 {
@@ -115,7 +129,9 @@ namespace FiveMenu.Client.Data
                 ["Ford"] = new Dictionary<string, string>()
                 {
                     ["Focus RS"] = "focusrs",
-                    ["Expedition Max"] = "expmax20"
+                    ["Expedition Max"] = "expmax20",
+                    ["Mustang GT Premium"] = "mst",
+                    ["F150"] = "f150"
                 },
                 ["Range Rover"] = new Dictionary<string, string>()
                 {
@@ -146,11 +162,16 @@ namespace FiveMenu.Client.Data
                 },
                 ["Lexus"] = new Dictionary<string, string>()
                 {
-                    ["LX"] = "lx2018"
+                    ["LX"] = "lx2018",
+                    ["LFA"] = "lfa"
                 },
                 ["Mitsubishi"] = new Dictionary<string, string>()
                 {
                     ["EVO 10"] = "evo10"
+                },
+                ["Volvo"] = new Dictionary<string, string>()
+                {
+                    ["V60 B4"] = "v60"
                 },
                 ["Tesla"] = new Dictionary<string, string>()
                 {
@@ -1742,10 +1763,6 @@ namespace FiveMenu.Client.Data
                     "weevil2"
                 },
             },
-        };
-
-        public static Dictionary<string, string> VehicleList2 = new Dictionary<string, string>()
-        {
         };
     }
 }
